@@ -1,9 +1,10 @@
 package it.unibo.scafi.context.xc
 
 import it.unibo.scafi.collections.SafeIterable
-import it.unibo.scafi.language.xc.calculus.{ ExchangeCalculus, NeighborValuesOps }
-import cats.Applicative
 import it.unibo.scafi.language.foundation.SharedDataOps
+import it.unibo.scafi.language.xc.calculus.{ ExchangeCalculus, NeighborValuesOps }
+
+import cats.Applicative
 
 /**
  * Implements the foundational semantics for the [[SharedData]] of the exchange calculus.

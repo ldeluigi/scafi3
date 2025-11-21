@@ -1,8 +1,8 @@
 package it.unibo.scafi.collections
 
-import cats.kernel.{ LowerBounded, UpperBounded }
-
 import it.unibo.scafi.UnitTest
+
+import cats.kernel.{ LowerBounded, UpperBounded }
 
 trait SafeIterableTests:
   this: UnitTest =>

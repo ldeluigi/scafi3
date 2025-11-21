@@ -1,15 +1,15 @@
 package it.unibo.scafi.libraries
 
+import scala.math.Fractional.Implicits.infixFractionalOps
+
 import it.unibo.scafi.language.fc.syntax.FieldCalculusSyntax
-import it.unibo.scafi.message.CodableFromTo
+import it.unibo.scafi.language.foundation.AggregateFoundation
 import it.unibo.scafi.libraries.FieldCalculusLibrary.neighborValues
 import it.unibo.scafi.libraries.FoldingLibrary.foldWithoutSelf
-import scala.math.Fractional.Implicits.infixFractionalOps
+import it.unibo.scafi.message.CodableFromTo
 
 import cats.kernel.{ LowerBounded, PartialOrder, UpperBounded }
 import cats.kernel.instances.DoubleOrder
-
-import it.unibo.scafi.language.foundation.AggregateFoundation
 
 /**
  * This library provides a set of mathematical functions.

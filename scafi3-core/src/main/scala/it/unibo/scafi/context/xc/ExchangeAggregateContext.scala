@@ -4,7 +4,7 @@ import it.unibo.scafi.context.AggregateContext
 import it.unibo.scafi.context.common.BranchingContext
 import it.unibo.scafi.language.xc.calculus.ExchangeCalculus
 import it.unibo.scafi.language.xc.language.ExchangeLanguage
-import it.unibo.scafi.message.*
+import it.unibo.scafi.message.{ CodableFromTo, Import, InboundMessage, OutboundMessage, ValueTree }
 import it.unibo.scafi.runtime.network.NetworkManager
 import it.unibo.scafi.utils.AlignmentManager
 
