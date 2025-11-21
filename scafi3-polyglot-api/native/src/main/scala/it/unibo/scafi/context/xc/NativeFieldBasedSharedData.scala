@@ -1,10 +1,10 @@
-package it.unibo.scafi.language.xc
+package it.unibo.scafi.context.xc
 
 import scala.scalanative.unsafe.{ exported, CString, Ptr }
 import scala.util.chaining.scalaUtilChainingOps
 
 import it.unibo.scafi.context.xc.FieldBasedSharedData
-import it.unibo.scafi.language.xc.NativeFieldBasedSharedData.given
+import NativeFieldBasedSharedData.given
 import it.unibo.scafi.libraries.PortableLibrary
 import it.unibo.scafi.nativebindings.aliases.NValues
 import it.unibo.scafi.nativebindings.structs.{ BinaryCodable as CBinaryCodable, Field as CField }

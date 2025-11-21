@@ -4,10 +4,10 @@ import java.util.concurrent.atomic.AtomicReference
 
 import scala.scalanative.unsafe.{ exported, Ptr }
 
-import it.unibo.scafi.language.AggregateFoundation
+import it.unibo.scafi.language.foundation.AggregateFoundation
 import it.unibo.scafi.language.common.syntax.BranchingSyntax
 import it.unibo.scafi.language.fc.syntax.FieldCalculusSyntax
-import it.unibo.scafi.language.xc.{ FieldBasedSharedData, NativeFieldBasedSharedData }
+import it.unibo.scafi.context.xc.{ FieldBasedSharedData, NativeFieldBasedSharedData }
 import it.unibo.scafi.libraries.FullLibrary.libraryRef
 import it.unibo.scafi.message.NativeCodable.nativeCodable
 import it.unibo.scafi.nativebindings.all.{
