@@ -1,6 +1,6 @@
 package it.unibo.scafi.libraries
 
-import it.unibo.scafi.language.AggregateFoundation
+import it.unibo.scafi.language.foundation.AggregateFoundation
 
 /**
  * This library provides some common utility functions that are often used in programs and libraries.

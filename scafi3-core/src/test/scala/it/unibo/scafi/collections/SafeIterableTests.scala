@@ -1,7 +1,8 @@
 package it.unibo.scafi.collections
 
+import cats.kernel.{ LowerBounded, UpperBounded }
+
 import it.unibo.scafi.UnitTest
-import it.unibo.scafi.utils.boundaries.Bounded
 
 trait SafeIterableTests:
   this: UnitTest =>
@@ -22,7 +23,10 @@ trait SafeIterableTests:
       sut.foldLeft(List[A]())(_ :+ _) shouldBe sut.toIterable.foldLeft(List[A]())(_ :+ _)
       sut.foldRight(List[A]())(_ :: _) shouldBe sut.toIterable.foldRight(List[A]())(_ :: _)
 
-  def safeIterableOfBoundedType[A: {Ordering, Bounded}](nonEmpty: SafeIterable[A], empty: SafeIterable[A])(using
+  def safeIterableOfBoundedType[A: {Ordering, UpperBounded, LowerBounded}](
+      nonEmpty: SafeIterable[A],
+      empty: SafeIterable[A],
+  )(using
       CanEqual[A, A],
   ): Unit =
     it should behave like safeIterable(nonEmpty)
@@ -30,9 +34,9 @@ trait SafeIterableTests:
 
     it should "allow to compute min only with bounds" in:
       nonEmpty.min shouldBe nonEmpty.toIterable.min
-      empty.min shouldBe summon[Bounded[A]].upperBound
+      empty.min shouldBe summon[UpperBounded[A]].maxBound
 
     it should "allow to compute max only with bounds" in:
       nonEmpty.max shouldBe nonEmpty.toIterable.max
-      empty.max shouldBe summon[Bounded[A]].lowerBound
+      empty.max shouldBe summon[LowerBounded[A]].minBound
 end SafeIterableTests

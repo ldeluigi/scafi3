@@ -1,6 +1,6 @@
 package it.unibo.scafi.libraries
 
-import it.unibo.scafi.language.AggregateFoundation
+import it.unibo.scafi.language.foundation.AggregateFoundation
 
 object FoldingLibrary:
 

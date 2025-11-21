@@ -1,6 +1,6 @@
 package it.unibo.scafi.context
 
-import it.unibo.scafi.language.AggregateFoundation
+import it.unibo.scafi.language.foundation.AggregateFoundation
 import it.unibo.scafi.message.{ Export, Import, ValueTree }
 
 trait AggregateContext:

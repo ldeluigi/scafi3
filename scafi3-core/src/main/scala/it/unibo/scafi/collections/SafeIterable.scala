@@ -1,6 +1,6 @@
 package it.unibo.scafi.collections
 
-import it.unibo.scafi.utils.boundaries.{ LowerBounded, UpperBounded }
+import cats.kernel.{ LowerBounded, UpperBounded }
 
 /**
  * A safe iterable is an iterable that provides only safe operations. Safe operations are those that do not throw
@@ -39,7 +39,7 @@ trait SafeIterable[+A]:
    *   the minimum element of this iterable
    */
   def min[B >: A: {Ordering, UpperBounded}]: B =
-    minOption.getOrElse(summon[UpperBounded[B]].upperBound)
+    minOption.getOrElse(summon[UpperBounded[B]].maxBound)
 
   /**
    * Returns the maximum element of this iterable, according to the ordering of the elements. If the iterable is empty,
@@ -52,7 +52,7 @@ trait SafeIterable[+A]:
    *   the maximum element of this iterable
    */
   def max[B >: A: {Ordering, LowerBounded}]: B =
-    maxOption.getOrElse(summon[LowerBounded[B]].lowerBound)
+    maxOption.getOrElse(summon[LowerBounded[B]].minBound)
 
   export iterable.{
     collectFirst,

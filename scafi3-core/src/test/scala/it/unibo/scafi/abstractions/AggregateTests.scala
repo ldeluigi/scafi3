@@ -2,7 +2,7 @@ package it.unibo.scafi.abstractions
 
 import it.unibo.scafi.UnitTest
 import it.unibo.scafi.collections.{ SafeIterable, SafeIterableTests }
-import it.unibo.scafi.language.SharedDataOps
+import it.unibo.scafi.language.foundation.SharedDataOps
 
 trait AggregateTests:
   this: UnitTest & SafeIterableTests =>

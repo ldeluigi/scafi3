@@ -1,4 +1,4 @@
-package it.unibo.scafi.language.common
+package it.unibo.scafi.language.common.language
 
 import it.unibo.scafi.language.common.calculus.BranchingCalculus
 import it.unibo.scafi.language.common.syntax.BranchingSyntax

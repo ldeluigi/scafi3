@@ -1,7 +1,6 @@
 package it.unibo.scafi.language.common.syntax
 
 import it.unibo.scafi.context.AggregateContext
-import it.unibo.scafi.language.AggregateFoundation
 import it.unibo.scafi.language.fc.syntax.FieldCalculusSyntax
 import it.unibo.scafi.libraries.BranchingLibrary.branch
 import it.unibo.scafi.libraries.CommonLibrary.localId
@@ -15,6 +14,7 @@ import it.unibo.scafi.test.environment.Node.inMemoryNetwork
 import org.scalatest.Inspectors
 import org.scalatest.flatspec.AnyFlatSpecLike
 import org.scalatest.matchers.should
+import it.unibo.scafi.language.foundation.AggregateFoundation
 
 trait BranchingSyntaxTest extends AggregateProgramProbe:
   self: AnyFlatSpecLike & should.Matchers & Inspectors =>

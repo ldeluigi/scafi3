@@ -1,7 +1,5 @@
 package it.unibo.scafi.language.foundation
 
-import it.unibo.scafi.language.AggregateFoundation
-
 trait DeviceMock:
   this: AggregateFoundation & FieldMock =>
 

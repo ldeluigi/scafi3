@@ -2,11 +2,12 @@ package it.unibo.scafi.sensors
 
 import scala.annotation.nowarn
 
-import it.unibo.scafi.language.AggregateFoundation
+import it.unibo.scafi.language.foundation.AggregateFoundation
 
 /**
  * If an aggregate foundation implements this trait, it provides a way to measure the distance from the neighbours and
  * encapsulate the result in an aggregate value.
+ *
  * @tparam Distance
  *   the type of the distance measure
  */

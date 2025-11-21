@@ -1,8 +1,8 @@
 package it.unibo.scafi.context.common
 
-import it.unibo.scafi.language.AggregateFoundation
-import it.unibo.scafi.language.common.BranchingLanguage
 import it.unibo.scafi.language.common.calculus.BranchingCalculus
+import it.unibo.scafi.language.common.language.BranchingLanguage
+import it.unibo.scafi.language.foundation.AggregateFoundation
 import it.unibo.scafi.utils.AlignmentManager
 
 trait BranchingContext extends BranchingCalculus, BranchingLanguage:

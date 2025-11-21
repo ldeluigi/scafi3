@@ -1,10 +1,9 @@
-package it.unibo.scafi.language.xc
+package it.unibo.scafi.context.xc
 
 import it.unibo.scafi.collections.SafeIterable
-import it.unibo.scafi.language.SharedDataOps
-import it.unibo.scafi.language.xc.calculus.ExchangeCalculus
-
+import it.unibo.scafi.language.xc.calculus.{ ExchangeCalculus, NeighborValuesOps }
 import cats.Applicative
+import it.unibo.scafi.language.foundation.SharedDataOps
 
 /**
  * Implements the foundational semantics for the [[SharedData]] of the exchange calculus.
@@ -80,7 +79,7 @@ trait FieldBasedSharedData:
             a.neighborValues.view.map { case (id, value) => id -> f(value, other(id)) }.toMap,
           )
         override def apply(id: DeviceId): A = a.neighborValues.getOrElse(id, a.defaultValue)
-        private[xc] override def set(id: DeviceId, value: A): SharedData[A] = Field[A](
+        override def set(id: DeviceId, value: A): SharedData[A] = Field[A](
           a.default,
           a.neighborValues + (id -> value),
         )

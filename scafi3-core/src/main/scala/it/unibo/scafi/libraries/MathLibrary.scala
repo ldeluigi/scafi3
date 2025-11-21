@@ -1,12 +1,15 @@
 package it.unibo.scafi.libraries
 
-import it.unibo.scafi.language.AggregateFoundation
 import it.unibo.scafi.language.fc.syntax.FieldCalculusSyntax
 import it.unibo.scafi.message.CodableFromTo
+import it.unibo.scafi.libraries.FieldCalculusLibrary.neighborValues
+import it.unibo.scafi.libraries.FoldingLibrary.foldWithoutSelf
+import scala.math.Fractional.Implicits.infixFractionalOps
 
-import FieldCalculusLibrary.neighborValues
-import FoldingLibrary.foldWithoutSelf
-import Fractional.Implicits.infixFractionalOps
+import cats.kernel.{ LowerBounded, PartialOrder, UpperBounded }
+import cats.kernel.instances.DoubleOrder
+
+import it.unibo.scafi.language.foundation.AggregateFoundation
 
 /**
  * This library provides a set of mathematical functions.
@@ -33,4 +36,11 @@ object MathLibrary:
     val totW = neighborValues(weight).foldWithoutSelf(weight)(_ + _)
     val totV = neighborValues(weight * value).foldWithoutSelf(weight * value)(_ + _)
     totV / totW
+
+  class DoubleBounded extends DoubleOrder with LowerBounded[Double] with UpperBounded[Double]:
+    override def minBound: Double = Double.NegativeInfinity
+    override def maxBound: Double = Double.PositiveInfinity
+    override def partialOrder: PartialOrder[Double] = this
+
+  given DoubleBounded = new DoubleBounded
 end MathLibrary

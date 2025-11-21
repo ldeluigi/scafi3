@@ -1,4 +1,4 @@
-package it.unibo.scafi.language.xc
+package it.unibo.scafi.language.xc.language
 
 import it.unibo.scafi.language.fc.syntax.FieldCalculusSyntax
 import it.unibo.scafi.language.xc.calculus.ExchangeCalculus

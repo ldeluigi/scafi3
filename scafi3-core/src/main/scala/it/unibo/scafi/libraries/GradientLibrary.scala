@@ -2,17 +2,17 @@ package it.unibo.scafi.libraries
 
 import scala.math.Numeric.Implicits.infixNumericOps
 
-import it.unibo.scafi.language.AggregateFoundation
+import cats.kernel.UpperBounded
+
 import it.unibo.scafi.language.fc.syntax.FieldCalculusSyntax
 import it.unibo.scafi.message.CodableFromTo
 import it.unibo.scafi.sensors.DistanceSensor
 import it.unibo.scafi.sensors.DistanceSensor.senseDistance
-import it.unibo.scafi.utils.boundaries.UpperBounded
-
 import cats.syntax.all.catsSyntaxTuple2Semigroupal
 
 import FieldCalculusLibrary.share
 import CommonLibrary.mux
+import it.unibo.scafi.language.foundation.AggregateFoundation
 
 /**
  * This library provides a set of functions to compute the distance between nodes and a source in a network.
@@ -55,7 +55,7 @@ object GradientLibrary:
   def distanceTo[Format, N: {Numeric as numeric, UpperBounded as bound, CodableFromTo[Format]}](using
       language: AggregateFoundation & FieldCalculusSyntax,
   )(source: Boolean, distances: language.SharedData[N]): N =
-    share(bound.upperBound)(av => mux(source)(numeric.zero)(distanceEstimate(av, distances)))
+    share(bound.maxBound)(av => mux(source)(numeric.zero)(distanceEstimate(av, distances)))
 
   /**
    * This function computes the distance estimate from a source to this node, based on estimates from the node's

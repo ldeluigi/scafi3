@@ -1,6 +1,6 @@
 package it.unibo.scafi.language.fc.syntax
 
-import it.unibo.scafi.language.AggregateFoundation
+import it.unibo.scafi.language.foundation.AggregateFoundation
 import it.unibo.scafi.message.CodableFromTo
 
 trait FieldCalculusSyntax:

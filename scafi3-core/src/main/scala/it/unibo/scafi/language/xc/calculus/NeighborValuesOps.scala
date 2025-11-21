@@ -1,4 +1,4 @@
-package it.unibo.scafi.language.xc
+package it.unibo.scafi.language.xc.calculus
 
 /**
  * This trait defines the operations that can be performed on NValues.
@@ -70,6 +70,14 @@ trait NeighborValuesOps[SharedData[_], DeviceId]:
      */
     def values: Map[DeviceId, A]
 
-    private[xc] def set(id: DeviceId, value: A): SharedData[A]
+    /**
+     * @param id
+     *   the device id
+     * @param value
+     *   the value to set
+     * @return
+     *   a new SharedData with the value set for the given device id
+     */
+    def set(id: DeviceId, value: A): SharedData[A]
   end extension
 end NeighborValuesOps

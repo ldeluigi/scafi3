@@ -1,4 +1,4 @@
-package it.unibo.scafi.language
+package it.unibo.scafi.language.foundation
 
 import it.unibo.scafi.collections.SafeIterable
 

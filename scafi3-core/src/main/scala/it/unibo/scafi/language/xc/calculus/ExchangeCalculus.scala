@@ -1,7 +1,6 @@
 package it.unibo.scafi.language.xc.calculus
 
-import it.unibo.scafi.language.AggregateFoundation
-import it.unibo.scafi.language.xc.NeighborValuesOps
+import it.unibo.scafi.language.foundation.AggregateFoundation
 import it.unibo.scafi.message.CodableFromTo
 
 /**

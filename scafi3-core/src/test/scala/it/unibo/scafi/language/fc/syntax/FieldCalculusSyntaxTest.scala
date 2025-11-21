@@ -1,7 +1,6 @@
 package it.unibo.scafi.language.fc.syntax
 
 import it.unibo.scafi.context.AggregateContext
-import it.unibo.scafi.language.AggregateFoundation
 import it.unibo.scafi.libraries.All.{ evolve, localId, neighborValues }
 import it.unibo.scafi.message.ValueTree
 import it.unibo.scafi.runtime.ScafiEngine
@@ -14,6 +13,7 @@ import it.unibo.scafi.test.network.NoNeighborsNetworkManager
 import org.scalatest.Inspectors
 import org.scalatest.flatspec.AnyFlatSpecLike
 import org.scalatest.matchers.should
+import it.unibo.scafi.language.foundation.AggregateFoundation
 
 trait FieldCalculusSyntaxTest extends AggregateProgramProbe:
   self: AnyFlatSpecLike & should.Matchers & Inspectors =>

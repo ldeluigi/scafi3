@@ -1,4 +1,5 @@
 import scala.scalanative.build.*
+
 import sbtcrossproject.CrossProject
 import org.scalajs.linker.interface.OutputPatterns
 
@@ -14,19 +15,19 @@ ThisBuild / developers := List(
     "nicolasfara",
     "Nicolas Farabegoli",
     "nicolas.farabegoli@unibo.it",
-    url("https://nicolasfarabegoli.it")
+    url("https://nicolasfarabegoli.it"),
   ),
   Developer(
     "cric96",
     "Gianluca Aguzzi",
     "gianluca.aguzzi@unibo.it",
-    url("https://github.com/cric96")
+    url("https://github.com/cric96"),
   ),
   Developer(
     "tassiluca",
     "Luca Tassinari",
     "luca.tassinari.2000@gmail.com",
-    url("https://github.com/tassiluca")
+    url("https://github.com/tassiluca"),
   ),
 )
 val commonScalacOptions = Seq(
@@ -42,7 +43,8 @@ val commonScalacOptions = Seq(
   "-indent",
   "-unchecked",
   "-explain",
-  "-encoding", "UTF-8",
+  "-encoding",
+  "UTF-8",
   "-feature",
   "-preview",
   "-deprecation",
@@ -142,7 +144,7 @@ lazy val example = project
       "it.unibo.alchemist" % "alchemist-swingui" % alchemistVersion,
     ),
     scalacOptions ++= Seq(
-      "-language:experimental.saferExceptions"
+      "-language:experimental.saferExceptions",
     ),
   )
   .dependsOn(`scafi3-core`.jvm, `alchemist-incarnation-scafi3`)
@@ -151,7 +153,7 @@ lazy val root = project
   .in(file("."))
   .enablePlugins(ScalaUnidocPlugin)
   .aggregate(`alchemist-incarnation-scafi3`)
-  .aggregate(crossProjects(`scafi3-core`, `scafi3-distributed`).map(_.project)*)
+  .aggregate(crossProjects(`scafi3-core`, `scafi3-distributed`).map(_.project) *)
   .settings(
     name := "scafi3",
     publish / skip := true,

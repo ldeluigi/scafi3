@@ -1,6 +1,6 @@
 package it.unibo.scafi.libraries
 
-import it.unibo.scafi.language.AggregateFoundation
+import it.unibo.scafi.language.foundation.AggregateFoundation
 import it.unibo.scafi.language.xc.syntax.{ ExchangeSyntax, ReturnSending }
 import it.unibo.scafi.message.CodableFromTo
 
