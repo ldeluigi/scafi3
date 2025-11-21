@@ -2,6 +2,7 @@ package it.unibo.scafi.language.foundation
 
 import it.unibo.scafi.collections.SafeIterable
 import it.unibo.scafi.language.foundation.SharedDataOps
+
 import cats.Applicative
 import cats.kernel.Monoid
 
