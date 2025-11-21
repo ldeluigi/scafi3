@@ -12,5 +12,4 @@ object All:
   export FoldingLibrary.{ *, given }
   export GradientLibrary.{ *, given }
   export MathLibrary.{ *, given }
-  export cats.syntax.all.*
-  export cats.instances.all.given
+  export CatsLibrary.{ *, given }

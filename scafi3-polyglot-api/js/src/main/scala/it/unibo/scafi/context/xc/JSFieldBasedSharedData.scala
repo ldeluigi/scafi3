@@ -1,6 +1,6 @@
-package it.unibo.scafi.language.xc
+package it.unibo.scafi.context.xc
 
-import it.unibo.scafi.language.xc.FieldBasedSharedData
+import it.unibo.scafi.context.xc.FieldBasedSharedData
 import it.unibo.scafi.libraries.PortableLibrary
 import it.unibo.scafi.types.PortableTypes
 

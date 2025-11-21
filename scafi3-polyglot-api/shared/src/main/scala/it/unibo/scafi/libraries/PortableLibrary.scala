@@ -7,7 +7,7 @@ import it.unibo.scafi.types.PortableTypes
  */
 trait PortableLibrary:
   self: PortableTypes =>
-  export it.unibo.scafi.language.AggregateFoundation
+  export it.unibo.scafi.language.foundation.AggregateFoundation
   export it.unibo.scafi.message.Codable
 
   /**
